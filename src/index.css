@@ -269,3 +269,153 @@ button.submit:disabled {
     padding: 1.25rem;
   }
 }
+
+/* View Toggle (Manual vs Foto) */
+.view-tabs {
+  display: flex;
+  margin-bottom: 1.5rem;
+  background: var(--toggle-inactive);
+  border-radius: 8px;
+  padding: 0.25rem;
+  border: 1px solid var(--border);
+}
+
+.view-tab {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.view-tab.active {
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Photo Upload Area */
+.photo-upload-area {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--toggle-inactive);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-upload-area:hover {
+  border-color: var(--primary);
+  background: #f8fafc;
+}
+
+.photo-upload-area input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.photo-upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.photo-upload-content svg {
+  color: var(--text-muted);
+}
+.photo-upload-area:hover .photo-upload-content svg {
+  color: var(--primary);
+}
+
+.photo-upload-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.photo-upload-subtext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Scanned Items List */
+.scanned-items-container {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.scanned-items-header {
+  background: var(--toggle-inactive);
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+}
+
+.scanned-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s ease;
+  gap: 0.75rem;
+}
+
+.scanned-item:last-child {
+  border-bottom: none;
+}
+
+.scanned-item:hover {
+  background: var(--toggle-inactive);
+}
+
+.scanned-item label {
+  margin-bottom: 0; /* Override global label style */
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 500;
+}
+
+.scanned-item-price {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.scanned-item input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+

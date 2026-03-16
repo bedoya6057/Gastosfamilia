@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS gastos (
     metodo_pago TEXT CHECK (metodo_pago IN ('Liquidez', 'Tarjeta')),
     tipo_gasto TEXT CHECK (tipo_gasto IN ('Fijo', 'Variable')),
     monto DECIMAL(10, 2) NOT NULL,
+    descripcion TEXT,
     fecha DATE DEFAULT CURRENT_DATE,
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
